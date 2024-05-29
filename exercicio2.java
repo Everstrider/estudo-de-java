@@ -1,45 +1,40 @@
 import java.util.Scanner;
 
-public class Main {
+public class Main2 {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        int num, num2;
-        double total;
-        
-        System.out.printf("1 - Cachorro Quente - R$4.00%n2 - X-Salada - R$4.50%n3 - X-Bacon 0 R$5.00%n4 - Torrada Simples - R$2.00%n5 - Refrigerante - R$1,50%n");
-        System.out.printf("Digite o código do produto a ser pedido:%n");
-        num = sc.nextInt();
-        System.out.println("Quantos você deseja?");
-        num2 = sc.nextInt();
+        int alcool = 0;
+        int gasolina = 0;
+        int diesel = 0;
+        System.out.printf("1 - Álcool%n2 - Gasolina%n3 - Diesel%n4 - Fim%n");
+        System.out.printf("Digite o combustível desejado para abastecer o veículo:%n");
+        int tipo = sc.nextInt();
 
-        switch (num) {
-            case 1:
-                total = num2 * 4.00;
-                System.out.printf("O total a pagar é: R$%.2f", total);
-                break;
-            case 2:
-                total = num2 * 4.50;
-                System.out.printf("O total a pagar é: R$%.2f", total);
-                break;
-            case 3:
-                total = num2 * 5.00;
-                System.out.printf("O total a pagar é: R$%.2f", total);
-                break;
-            case 4:
-                total = num2 * 2.00;
-                System.out.printf("O total a pagar é: R$%.2f", total);
-                break;
-            case 5:
-                total = num2 * 1.50;
-                System.out.printf("O total a pagar é: R$%.2f", total);
-                break;
-            default:
-                System.out.println("Número Inválido");
+        while (tipo != 4) {
+            switch (tipo) {
+                case 1:
+                    alcool += 1;
+                    System.out.printf("Álcool: %d%n", alcool);
+                    tipo = sc.nextInt();
+                    break;
+                case 2:
+                    gasolina += 1;
+                    System.out.printf("Gasolina: %d%n", gasolina);
+                    tipo = sc.nextInt();
+                    break;
+                case 3:
+                    diesel += 1;
+                    System.out.printf("Diesel: %d%n", diesel);
+                    tipo = sc.nextInt();
+                    break;
+                default:
+                    System.out.printf("Código inválido, digite outro:%n");
+                    tipo = sc.nextInt();
+            }
         }
-
-
+        System.out.println("Muito Obrigado!");
 
         sc.close();
-        }
     }
+}
