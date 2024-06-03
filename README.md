@@ -1,0 +1,1 @@
+Programa para ler os dados de um produto em estoque (nome, preço, quantidade) e em seguida: Mostrar os dados do produto(nome, preço, quantidade, valor total no estoque); Realizar uma entrada no estoque e mostrar novamente os dados do produto; Realizar uma saída no estoque e mostrar novamente os dados do produto;
