@@ -1,40 +1,44 @@
-/** Fazer um programa que leia três valores com ponto flutuante de dupla precisão: A, B e C. Em seguida, calcule e
-mostre:
-a) a área do triângulo retângulo que tem A por base e C por altura.
-b) a área do círculo de raio C. (pi = 3.14159)
-c) a área do trapézio que tem A e B por bases e C por altura.
-d) a área do quadrado que tem lado B.
-e) a área do retângulo que tem lados A e B. */
 import java.util.Scanner;
-
+import entities.Product;
 public class Main {
     public static void main(String[] args) {
+         Scanner sc = new Scanner(System.in);
+         Product product = new Product();
 
-        Scanner sc = new Scanner(System.in);
+         System.out.printf("Enter product data:%n");
+         System.out.print("Name: ");
+         product.name = sc.nextLine();
+         System.out.print("Price: ");
+         product.price = sc.nextDouble();
+         System.out.print("Quantity in stock: ");
+         product.quantity = sc.nextInt();
 
-      float a, b, c;
-      int q = 2;
-      double PI = 3.14159;
-      double tri, cir, tra, qua, ret;
-      a = sc.nextFloat();
-      b = sc.nextFloat();
-      c = sc.nextFloat();
+         System.out.println("Product data: " + product.toString());
+         System.out.println("Type 1 to add products, 2 to remove them or 3 to stop: ");
+         int choice = sc.nextInt();
 
-      tri = a * c / 2;
-      cir = PI * Math.pow(c, q);
-      tra = (a + b) * c / 2;
-      qua = b * b;
-      ret = a * b;
-      System.out.printf("A área do triângulo retângulo é: %.3f%n", tri);
-      System.out.printf("A área do círculo é: %.3f%n", cir);
-      System.out.printf("A área do trapézio é: %.3f%n", tra);
-      System.out.printf("A área do quadrado é: %.3f%n", qua);
-      System.out.printf("A área do retângulo é: %.3f%n", ret);
+         while (choice != 3) {
+             switch (choice) {
+                 case 1:
+                     System.out.print("Enter the number of products to be added in stock: ");
+                     int quantity = sc.nextInt();
+                     product.addProducts(quantity);
+                     System.out.println("Updated data: " + product.toString());
+                     System.out.println("Type 1 to add products, 2 to remove them or 3 to stop: ");
+                     choice = sc.nextInt();
+                     break;
+                 case 2:
+                     System.out.print("Enter the number of products to be removed from stock: ");
+                     quantity = sc.nextInt();
+                     product.removeProducts(quantity);
+                     System.out.println("Updated data: " + product.toString());
+                     System.out.println("Type 1 to add products, 2 to remove them or 3 to stop: ");
+                     choice = sc.nextInt();
+                     break;
+             }
+         }
+         System.out.println("Closing the program.");
 
-
-
-
-      sc.close();
-
+         sc.close();
         }
     }
