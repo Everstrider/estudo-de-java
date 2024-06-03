@@ -35,6 +35,11 @@ public class Main {
                      System.out.println("Type 1 to add products, 2 to remove them or 3 to stop: ");
                      choice = sc.nextInt();
                      break;
+                  default:
+                     System.out.println("Invalid Number.");
+                     System.out.println("Type 1 to add products, 2 to remove them or 3 to stop: ");
+                     choice = sc.nextInt();
+                     break;
              }
          }
          System.out.println("Closing the program.");
